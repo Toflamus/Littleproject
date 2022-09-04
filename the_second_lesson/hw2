@@ -1,0 +1,33 @@
+#draw a tri
+import turtle
+def drawatri():#直接封装函数，在接下来的重叠三角形中可以重复使用
+    i=1
+    while i<3:
+        turtle.fd(100)
+        turtle.setheading(120*i)
+        i+=1
+    turtle.fd(100)
+
+turtle.setup(600,600,200,200)
+turtle.pendown()
+turtle.pensize(2)
+turtle.width()
+turtle.pencolor("green")
+drawatri()
+turtle.up()
+
+turtle.setheading(0)
+
+turtle.setup(600,600,200,200)
+turtle.pendown()
+turtle.pensize(2)
+turtle.width()
+turtle.pencolor("green")
+drawatri()
+turtle.fd(100)
+turtle.setheading(0)
+drawatri()
+turtle.setheading(0)
+turtle.fd(100)
+drawatri()
+turtle.up()

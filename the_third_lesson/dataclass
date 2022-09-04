@@ -1,0 +1,15 @@
+# a =3.1415926
+# c =2
+# b=divmod(a,c)
+# print(b)
+
+import math
+# a=math.ceil(1.35)
+# print(a)
+# c=0.1+0.4+0.5
+# d=math.fsum([0.1,0.4,0.5])
+# print(c)
+# print(d)
+a='\u3600'
+print(a)
+

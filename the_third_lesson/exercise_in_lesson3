@@ -1,0 +1,50 @@
+#题目
+#一年360天，初始水平值为1.0
+# 以每月30天计算，每个月初连续十天每天工作水平增加N
+# 其他时间休息每天水平降低0.005
+# 编写程序完成如下表格
+# N       0.01    0.03    0.05    0.07    0.09
+# 年终值  
+
+#输入：N、每个月初的数值
+#处理：前十天每日增加N，后20天每天降低一个cnt=0.005
+#输出：表格：格式、数据
+
+#定义常数
+deConst=0.005#削减常数
+workday=10#每月工作
+monthdays=30#月多少天
+month=12#几个月
+#以下两个为等差数列的参数
+difference=0.02#两次N值相差
+times=5#N值变化次数
+
+#定义函数
+#每个月的变化
+def Monthprocess (initial,N,deConst,workday,monthdays):
+    afterlevel=initial*((1+N)**workday)
+    afterlevel*=((1-deConst)**(monthdays-workday))
+    return afterlevel
+#根据每月变化计算每年变化
+def Yearprocess (initial,N,deConst,workday,monthdays):
+    lev=initial
+    for i in range(month):
+        lev = Monthprocess(lev,N,deConst,workday,monthdays)
+    return lev
+
+#定义初始值
+N=0.01
+level=1
+#进行循环
+#打印表头
+print("{0:>12}".format("N's value"))
+print("{0:>12}".format("result"),end=('\0'))
+for i in range(times):
+
+    level=Yearprocess(level,N,deConst,workday,monthdays)
+    #打印数据
+    print('\t')
+    print("{0:>12.5}".format(N))
+    print("{0:>12.5}".format(level),end=('\0'))
+    #更改变量
+    N+=difference

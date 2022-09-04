@@ -1,0 +1,22 @@
+import requests
+from bs4 import BeautifulSoup
+r = requests.get('http://www.bilibili.com')
+#print(r.encoding)
+r.encoding = 'utf-8'
+#print(r.text)
+soup = BeautifulSoup(r.text)
+print("this is head")
+print (soup.head)
+print("this is title")
+print (soup.title)
+print("this is body")
+print (soup.body)
+print("this is p")
+print (soup.p)
+print("this is strings")
+print (soup.strings)
+print("this is stripped_strings")
+print (soup.stripped_strings)
+print("this is find all")
+print(soup.find_all(string= '番剧'))
+print(type(soup))

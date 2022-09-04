@@ -1,0 +1,28 @@
+import time
+from turtle import right
+
+# scale=10
+# print("{0:-^12}".format("Start"))
+# for i in range(scale+1):
+#     print(scale,i)
+#     a,b='**'*i,'..'*(scale-i)
+#     c=(i/scale)*100
+#     print('%{:^3.0f}[{}->{}]'.format(c,a,b))
+#     time.sleep(0.5)
+# print("{0:-^12}".format("over"))
+
+# for i in range(101):
+#     print("\r{:3}%".format(i),end="")
+#     time.sleep(0.05)
+
+scale=10
+print("{0:-^12}".format("Start"))
+for i in range(scale+1):
+    # print(scale,i)
+    a,b='**'*i,'..'*(scale-i)
+    c=(i/scale)*100
+    print('\r%{:^3.0f}[{}->{}]'.format(c,a,b),end="")#添加终止换行和返回行首的转义符
+    time.sleep(0.5)
+print("{0:-^12}".format("over"))
+
+
